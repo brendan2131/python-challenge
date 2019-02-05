@@ -16,6 +16,7 @@ with open(csv_path, newline="", encoding = "utf-8") as csvfile:
     csv_header = next(budget)
 
     for i in budget:
+        
         # Collect months in list
         months.append(i[0])
 

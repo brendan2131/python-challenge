@@ -4,7 +4,7 @@ import csv
 # Path to CSV
 csv_path = os.path.join("..","Resources","election_data.csv")
 
-# Create lists
+# Create list for votes
 votes=[]
 
 
@@ -15,16 +15,16 @@ with open(csv_path, newline="", encoding = "utf-8") as csvfile:
     # Skip Headers
     csv_header = next(election)
 
+    # Collect all votes
     for i in election:
-        # Collect all votes
         votes.append(i[2])
-
-    # Get list of Candidates
-    candidates = set(votes)
 
     TotalVotes = len(votes)
 
-    # Create lists for each candidate
+    # Find unique candidate values
+    candidates = set(votes)
+
+    # Use Lists to find total votes for each candidate
     KhanList=[]
     OTooleyList=[]
     CorreyList=[]
@@ -57,7 +57,6 @@ with open(csv_path, newline="", encoding = "utf-8") as csvfile:
     ResultsList=[KhanVotes,OTooleyVotes,CorreyVotes,LiVotes]
     CandidateList=["Khan","O'Tooley","Correy","Li"]
 
-    
     greatist_ammount = max(ResultsList)
     max_index = ResultsList.index(greatist_ammount)
     Winner = CandidateList[max_index]
