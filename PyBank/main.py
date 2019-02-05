@@ -47,6 +47,7 @@ with open(csv_path, newline="", encoding = "utf-8") as csvfile:
     print(f"Greatist Increase in Profits: {increase_date} (${greatist_ammount})")
     print(f"Greatist Decrease in Profits: {decrease_date} (${lowest_ammount})")
 
+    # Export text file
     output_path = os.path.join("..", "PyBank", "BudgetResults.txt")
 
     text_file = open(output_path, "w")
